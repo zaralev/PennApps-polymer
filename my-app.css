@@ -1,0 +1,16 @@
+/* Added to remove nav from main screen desktop */
+@media screen and (min-width: 641px) {
+  app-drawer.mobile {
+    display:none;
+  }
+
+  .desktop {
+    display:block;
+  }
+
+}
+@media screen and (max-width: 640px ) {
+  .desktop {
+    display:none;
+  }
+}
