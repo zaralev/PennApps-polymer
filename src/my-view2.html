@@ -121,6 +121,93 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         }
       }
+      .chart-space {
+        text-align:center;
+      }
+      .chart-space img{
+        max-width: 100%;
+      }
+      .waterblock {
+          background-color: #5df0eb;
+          width:30px;
+          height:30px;
+          display:inline-block;
+          margin:0 5em;
+      }
+      .waterblock:after {
+        content:'Water';
+        font-size:12pt;
+        margin-left:3em;
+      }
+      .foodblock {
+          background-color: #f8ff40;
+          width:30px;
+          height:30px;
+          display:inline-block;
+          margin:0 5em;
+      }
+      .foodblock:after {
+        content:'Food';
+        font-size:12pt;
+        margin-left:3em;
+      }
+      .outsideblock {
+          background-color: #89f926;
+          width:30px;
+          height:30px;
+          display:inline-block;
+          margin:0 5em;
+      }
+      .outsideblock:after {
+        content:'Outside';
+        font-size:12pt;
+        margin-left:3em;
+      }
+        @media screen and (max-width: 640px ) {
+          .waterblock {
+              background-color: #5df0eb;
+              width:15px;
+              height:15px;
+              display:inline-block;
+              margin:0 20em 0 5em;
+          }
+          .foodblock {
+              background-color: #f8ff40;
+              width:15px;
+              height:15px;
+              display:inline-block;
+              margin:0 20em 0 5em;
+          }
+          .outsideblock {
+              background-color: #89f926;
+              width:15px;
+              height:15px;
+              display:inline-block;
+              margin:0 20em 0 5em;
+          }
+          .outsideblock:after {
+            content:'Outside';
+            font-size:10pt;
+            margin-left:2em;
+          }
+          .foodblock:after {
+            content:'Food';
+            font-size:10pt;
+            margin-left:2em;
+          }
+          .waterblock:after {
+            content:'Water';
+            font-size:10pt;
+            margin-left:2em;
+          }
+        }
+
+        google-chart {
+          height: 300px;
+          max-width: 100%;
+          background-color: none;
+          /*margin-left:-1em;*/
+        }
 
     </style>
     <div class="mobile-dog">
@@ -131,12 +218,64 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </div>
     <div class="arrow" id="dog1arrow"></div>
     <div class="card">
-      <div class="circle">2</div>
-      <h1>Combined Chart</h1>
+      <div class="circle">1</div>
+      <h1>Combined Chart  <div class="waterblock"></div><div class="foodblock"></div><div class="outsideblock"></h1>
       <div class="chart-space">
-
+        <!-- <img src="../images/chart1.png" /> -->
+        <google-chart
+          type='pie'
+          options='{"title": "Distribution of days in 2001Q1"}'
+          cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
+          rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
+        </google-chart>
       </div>
     </div>
+  </div>
+
+  <div class="card">
+    <div class="circle">2</div>
+    <h1>Water Chart</h1>
+    <div class="chart-space">
+      <!-- <img src="../images/chart4.png" /> -->
+      <google-chart
+        type='pie'
+        options='{"title": "Distribution of days in 2001Q1"}'
+        cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
+        rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
+      </google-chart>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="circle">3</div>
+    <h1>Food Chart</h1>
+    <div class="chart-space">
+      <!-- <img src="../images/chart3.png" /> -->
+      <google-chart
+        type='pie'
+        options='{"title": "Distribution of days in 2001Q1"}'
+        cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
+        rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
+      </google-chart>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="circle">4</div>
+    <h1>Outside Chart</h1>
+    <div class="chart-space">
+      <!-- <img src="../images/chart7.png" /> -->
+      <google-chart
+        type='pie'
+        options='{"title": "Distribution of days in 2001Q1"}'
+        cols='[{"label":"Month", "type":"string"}, {"label":"Days", "type":"number"}]'
+        rows='[["Jan", 31],["Feb", 28],["Mar", 31]]'>
+      </google-chart>
+    </div>
+  </div>
+
+
+</div>
   </template>
 
     <script>
