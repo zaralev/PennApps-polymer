@@ -10,7 +10,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="shared-styles.html">
-<link rel="import" href="../bower_components/google-chart/google-chart.html" >
+<link rel="import" href="../bower_components/google-chart/google-chart.html">
 
 <dom-module id="my-view1">
     <template>
@@ -210,15 +210,110 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         /*margin-left:-1em;*/
       }
 
-    </style>
 
+
+                  /* Added to remove nav from main screen desktop */
+                  @media screen and (min-width: 641px) {
+                    app-drawer.mobile {
+                      display:none;
+                    }
+
+                    .desktop {
+                      display:block;
+                    }
+
+                  }
+
+            /*CUSTOM */
+                  @media screen and (max-width: 640px ) {
+                    .desktop {
+                      display:none;
+                    }
+                  }
+                  .desktop {
+                    text-align: justify;
+                    text-align-last: center;
+                                            margin-bottom: 3em;
+                  }
+
+                  .dog {
+                    box-sizing: border-box;
+                    width:33%;
+                    display:inline-block;
+                    margin-top: 2em;
+                  }
+                  .dog:first-child {
+                    margin-right: 5em;
+                  }
+                  .desktop .dog ul {
+                    margin:0;
+                    padding:0;
+                  }
+                  .desktop .dog li {
+                    margin:0;
+                    padding:0;
+                    list-style-type: none;
+                    /*background-color: red;*/
+                    display:block;
+                  }
+
+                  .desktop .dog ul li:last-child {
+                    margin-top: -0.5em;
+                    padding:1em;
+                    background-color: #fff;
+                    font-size:1.3em;
+                  }
+                  .desktop .dog ul li#one:before {
+                    content: ' ';
+                    width:50px;
+                    height:50px;
+                    background-color:white;
+                    position:absolute;
+                    margin-left:1em;
+                    margin-top:1em;
+                    -ms-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                  }
+
+                  /*.arrow {
+                    width:50px;
+                    height:50px;
+                    background-color:white;
+                    position:absolute;
+                    margin-left:2em;
+                    -ms-transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                  }*/
+
+                  .desktop .dog li img {
+                    max-width:100%;
+                  }
+    </style>
+    <div class="desktop">
+      <div class="dog">
+        <ul>
+          <li><a href="/view1"><img src ="../images/dog1.png"/></a></li>
+          <li id="one"><div class="name">Poochie</div>  </li>
+
+        </ul>
+      </div>
+
+      <div class="dog">
+        <ul>
+          <li><a href="/view2"><img src ="../images/dog2.png"/></a></li>
+          <li id="two"><div class="name">Rover</div></li>
+        </ul>
+      </div>
+
+    </div>
     <div class="mobile-dog">
       <ul>
         <li><a href="/view1"><img src ="../images/dog1.png" /></a></li>
         <li><div class="name">Poochie</div></li>
       </ul>
     </div>
-<div class="arrow" id="dog1arrow"></div>
     <div class="card">
       <div class="circle">1</div>
       <h1>Combined Chart
