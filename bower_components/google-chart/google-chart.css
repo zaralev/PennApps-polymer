@@ -1,0 +1,39 @@
+@media screen and (min-width: 641px) {
+     :host {
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        width: 800px;
+        height: 300px;
+        margin: auto;
+    }
+     :host([type="gauge"]) {
+        width: 800px;
+        height: 300px;
+    }
+    #chartdiv {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+     :host {
+        display: -webkit-flex;
+        display: -ms-flex;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        width: 500px;
+        height: 300px;
+        margin: auto;
+    }
+     :host([type="gauge"]) {
+        width: 500px;
+        height: 300px;
+    }
+    #chartdiv {
+        width: 500px;
+    }
+}
