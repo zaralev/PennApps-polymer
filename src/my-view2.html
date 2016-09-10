@@ -12,26 +12,136 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-view2">
-  <template>
+    <template>
     <style include="shared-styles">
       :host {
         display: block;
 
         padding: 10px;
       }
-    </style>
+      .card {
+        background-color: #8abb39;
+      }
+      .circle {
+        background-color: #749c32;
+        color: #fff;
+        float:left;
+        margin-right:0.5em;
+      }
 
+      h1 {
+        color: #fff;
+        letter-spacing: 0.1em;
+      }
+
+@media screen and (max-width: 640px ) {
+      .mobile-dog {
+        display:block;
+        margin:auto;
+        margin-left: -2.5em;
+      }
+    }
+    @media screen and (min-width: 641px ) {
+          .mobile-dog {
+            display:none;
+          }
+        }
+        /*@media screen and (min-width: 520px ) {
+              .mobile-dog {
+                margin:auto;
+
+              }
+            }*/
+
+        .mobile-dog img{
+          max-width:100%;
+        }
+        .mobile-dog ul li {
+          margin:0;
+          padding:0;
+          list-style-type: none;
+          /*background-color: red;*/
+          display:block;
+        }
+        .mobile-dog ul li:last-child {
+          margin-top: -0.5em;
+          padding:1em;
+          background-color: #fff;
+          max-width:468px;
+          text-align: center;
+          font-weight: bold;
+          font-size:1.3em;
+        }
+
+        @media screen and (max-width: 640px ) {
+        .arrow {
+          width:50px;
+          height:50px;
+          background-color:white;
+          position:absolute;
+          margin-left:2em;
+          margin-top:-3.5em;
+          z-index: -10;
+          -ms-transform: rotate(45deg); /* IE 9 */
+      -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+      transform: rotate(45deg);
+        }
+      }
+      @media screen and (min-width: 640px ) {
+        .arrow {
+          width:50px;
+          height:50px;
+          background-color:white;
+          position:absolute;
+          right:11.7em;
+          margin-top:-3em;
+          z-index: -10;
+          -ms-transform: rotate(45deg); /* IE 9 */
+        -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+        transform: rotate(45deg);
+        }
+      }
+      @media screen and (max-width: 640px ) {
+        .card {
+          width:90%;
+          margin:2em 0 0 0;
+        }
+        .chart-space {
+          background-color: #aad75e;
+          margin:2em 0 0 0;
+          padding:2em;
+        }
+      }
+      @media screen and (min-width: 641px ) {
+        .chart-space {
+          background-color: #aad75e;
+          margin:2em 0 0 0 ;
+          padding:1em;
+          /*width: 80%;*/
+
+        }
+      }
+
+    </style>
+    <div class="mobile-dog">
+      <ul>
+        <li><a href="/view1"><img src ="../images/dog2.png" /></a></li>
+        <li><div class="name">Rover</div></li>
+      </ul>
+    </div>
+    <div class="arrow" id="dog1arrow"></div>
     <div class="card">
       <div class="circle">2</div>
-      <h1>View Two</h1>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
-      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
+      <h1>Combined Chart</h1>
+      <div class="chart-space">
+
+      </div>
     </div>
   </template>
 
-  <script>
-    Polymer({
-      is: 'my-view2'
-    });
-  </script>
+    <script>
+        Polymer({
+            is: 'my-view2'
+        });
+    </script>
 </dom-module>
